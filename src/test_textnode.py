@@ -7,7 +7,7 @@ class TestTextNode(unittest.TestCase):
         node2 = TextNode("This is a text node", TextType.BOLD)
         self.assertEqual(node, node2)
     def test_neq(self):
-        node1 = TextNode("This is a text node", TextType.PLAIN)
+        node1 = TextNode("This is a text node", TextType.TEXT)
         node2 = TextNode("This is a text node", TextType.BOLD)
         self.assertNotEqual(node1, node2)
     def test_none(self):
@@ -16,7 +16,7 @@ class TestTextNode(unittest.TestCase):
         self.assertNotEqual(node1, node2)
     def test_same_text(self):
         node1 = TextNode("This is not a link", TextType.BOLD)
-        node2 = TextNode("This is not a link", TextType.PLAIN)
+        node2 = TextNode("This is not a link", TextType.TEXT)
         self.assertNotEqual(node1, node2)
 
 if __name__ == "__main__":
