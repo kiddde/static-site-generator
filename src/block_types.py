@@ -29,13 +29,12 @@ def block_to_block_type(md):
             ul = False
     if ul:
         return BlockType.UL
-    ol = True
-    for item in md_list:
+    if md.startswith("1. "):
         index = 1
-        if item[0:2] != f"{index}.":
-            ol = False
-        index += 1
-    if ol:
+        for item in md_list:
+            if not item.startswith(f"{index}. "):
+                return BlockType.PARAGRAPH
+            index += 1
         return BlockType.OL
     return BlockType.PARAGRAPH
 
