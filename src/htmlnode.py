@@ -23,7 +23,7 @@ class LeafNode(HTMLNode):
         if self.value == None:
             raise ValueError("Node has no value")
         if self.tag == None:
-            return value
+            return self.value
         if self.props is None:
             return f'<{self.tag}>{self.value}</{self.tag}>'
         else:
